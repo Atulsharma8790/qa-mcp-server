@@ -1,0 +1,19 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+body { background: #07061A; color: #E2E8F0; font-family: 'Inter', system-ui, sans-serif; }
+
+.card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
+.input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 10px 14px; color: #E2E8F0; font-size: 14px; outline: none; font-family: inherit; resize: vertical; }
+.input:focus { border-color: rgba(99,102,241,0.5); }
+.label { display: block; font-size: 12px; font-weight: 600; color: #7B8FA8; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; border-radius: 12px; border: none; cursor: pointer; font-size: 14px; font-weight: 600; font-family: inherit; transition: opacity 0.15s; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn:not(:disabled):hover { opacity: 0.85; }
+.btn-indigo { background: linear-gradient(135deg,#6366F1,#818CF8); color: #fff; }
+.btn-ghost { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #94A3B8; }
+select.input option { background: #1E1B3A; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.75s linear infinite; }
+
+pre.code-block { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; overflow: auto; font-size: 12px; font-family: 'Fira Code', 'Cascadia Code', monospace; color: #A5F3FC; white-space: pre-wrap; word-break: break-word; }

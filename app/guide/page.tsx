@@ -132,7 +132,7 @@ export default function Guide() {
         <ol style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 12 }}>
           {[
             { step: 'Open config file', detail: 'Mac: ~/Library/Application Support/Claude/claude_desktop_config.json\nWindows: %APPDATA%/Claude/claude_desktop_config.json' },
-            { step: 'Add this block', detail: `{\n  "mcpServers": {\n    "qa-intelligence": {\n      "url": "https://your-deployment.vercel.app/api/mcp"\n    }\n  }\n}` },
+            { step: 'Add this block', detail: `{\n  "mcpServers": {\n    "qa-intelligence": {\n      "url": "https://qa-mcp-server-theta.vercel.app/api/mcp"\n    }\n  }\n}` },
             { step: 'Restart Claude Desktop', detail: 'Quit and reopen. You should see the QA tools appear when you click the ⚡ icon in a conversation.' },
           ].map(({ step, detail }, i) => (
             <li key={i} style={{ display: 'flex', gap: 14 }}>
@@ -151,7 +151,7 @@ export default function Guide() {
   "servers": {
     "qa-intelligence": {
       "type": "http",
-      "url": "https://your-deployment.vercel.app/api/mcp"
+      "url": "https://qa-mcp-server-theta.vercel.app/api/mcp"
     }
   }
 }`}</pre>
@@ -163,7 +163,7 @@ export default function Guide() {
   "servers": {
     "qa-intelligence": {
       "type": "http",
-      "url": "https://your-deployment.vercel.app/api/mcp"
+      "url": "https://qa-mcp-server-theta.vercel.app/api/mcp"
     }
   }
 }`}</pre>
@@ -183,7 +183,7 @@ from mcp import ClientSession
 
 async def main():
     async with streamablehttp_client(
-        "https://your-deployment.vercel.app/api/mcp"
+        "https://qa-mcp-server-theta.vercel.app/api/mcp"
     ) as (read, write, _):
         async with ClientSession(read, write) as session:
             await session.initialize()
@@ -210,7 +210,7 @@ import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/
 
 const client = new Client({ name: 'my-qa-pipeline', version: '1.0' })
 const transport = new StreamableHTTPClientTransport(
-  new URL('https://your-deployment.vercel.app/api/mcp')
+  new URL('https://qa-mcp-server-theta.vercel.app/api/mcp')
 )
 await client.connect(transport)
 
@@ -240,7 +240,7 @@ String requestBody = """
     """;
 
 Request request = new Request.Builder()
-    .url("https://your-deployment.vercel.app/api/playground")
+    .url("https://qa-mcp-server-theta.vercel.app/api/playground")
     .post(RequestBody.create(requestBody,
           MediaType.get("application/json")))
     .build();

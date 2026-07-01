@@ -165,7 +165,7 @@ const CLIENTS = [
 {
   "mcpServers": {
     "qa-intelligence": {
-      "url": "https://your-deployment.vercel.app/api/mcp"
+      "url": "https://qa-mcp-server-theta.vercel.app/api/mcp"
     }
   }
 }`,
@@ -178,7 +178,7 @@ const CLIENTS = [
   "servers": {
     "qa-intelligence": {
       "type": "http",
-      "url": "https://your-deployment.vercel.app/api/mcp"
+      "url": "https://qa-mcp-server-theta.vercel.app/api/mcp"
     }
   }
 }`,
@@ -192,7 +192,7 @@ import asyncio, json
 
 async def main():
     async with streamablehttp_client(
-        "https://your-deployment.vercel.app/api/mcp"
+        "https://qa-mcp-server-theta.vercel.app/api/mcp"
     ) as (read, write, _):
         async with ClientSession(read, write) as session:
             await session.initialize()
@@ -212,7 +212,7 @@ import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/
 
 const client = new Client({ name: 'my-app', version: '1.0' })
 const transport = new StreamableHTTPClientTransport(
-  new URL('https://your-deployment.vercel.app/api/mcp')
+  new URL('https://qa-mcp-server-theta.vercel.app/api/mcp')
 )
 await client.connect(transport)
 
@@ -234,7 +234,7 @@ String body = """
     "args": { "feature_description": "User login with 2FA" } }
   """;
 Request req = new Request.Builder()
-  .url("https://your-deployment.vercel.app/api/playground")
+  .url("https://qa-mcp-server-theta.vercel.app/api/playground")
   .post(RequestBody.create(body, MediaType.get("application/json")))
   .build();
 Response res = http.newCall(req).execute();
@@ -260,7 +260,7 @@ export default function Docs() {
       {/* MCP endpoint */}
       <div style={{ ...S.card, borderColor: 'rgba(99,102,241,0.25)', marginBottom: 40 }}>
         <p style={{ fontSize: 12, fontWeight: 700, color: '#818CF8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Base MCP Endpoint</p>
-        <code style={{ fontSize: 15, color: '#A5F3FC', fontFamily: 'monospace' }}>https://your-deployment.vercel.app/api/mcp</code>
+        <code style={{ fontSize: 15, color: '#A5F3FC', fontFamily: 'monospace' }}>https://qa-mcp-server-theta.vercel.app/api/mcp</code>
         <p style={{ fontSize: 12, color: '#475569', marginTop: 8 }}>Handles both SSE (<code style={{ color: '#7DD3FC' }}>GET</code>) and Streamable HTTP (<code style={{ color: '#7DD3FC' }}>POST</code>) transports automatically.</p>
       </div>
 

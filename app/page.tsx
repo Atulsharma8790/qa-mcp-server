@@ -53,7 +53,7 @@ export default function Home() {
       <div style={{ ...CARD, borderColor: 'rgba(99,102,241,0.25)', marginBottom: 48, padding: 24 }}>
         <p style={{ fontSize: 12, fontWeight: 700, color: '#818CF8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10 }}>MCP Endpoint</p>
         <code style={{ fontSize: 14, color: '#A5F3FC', fontFamily: 'monospace' }}>
-          https://your-deployment.vercel.app/api/mcp
+          https://qa-mcp-server-theta.vercel.app/api/mcp
         </code>
         <p style={{ fontSize: 12, color: '#475569', marginTop: 8 }}>
           Supports both SSE and Streamable HTTP transports. Compatible with Claude Desktop, Cursor, VS Code Copilot, and any MCP client.
@@ -84,7 +84,7 @@ export default function Home() {
 {
   "mcpServers": {
     "qa-intelligence": {
-      "url": "https://your-deployment.vercel.app/api/mcp"
+      "url": "https://qa-mcp-server-theta.vercel.app/api/mcp"
     }
   }
 }`,
@@ -95,7 +95,7 @@ export default function Home() {
 from mcp.client.streamable_http import streamablehttp_client
 
 async with streamablehttp_client(
-  "https://your-deployment.vercel.app/api/mcp"
+  "https://qa-mcp-server-theta.vercel.app/api/mcp"
 ) as (r, w, _):
   async with ClientSession(r, w) as session:
     await session.initialize()

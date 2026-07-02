@@ -1,5 +1,8 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import './globals.css'
+import PortfolioBar from '@/app/components/PortfolioBar'
+
 
 export const metadata: Metadata = {
   title: 'QA Intelligence MCP Server — Atul Sharma',
@@ -12,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <Suspense fallback={null}><PortfolioBar /></Suspense>
         <nav style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(7,6,26,0.95)', backdropFilter: 'blur(12px)', position: 'sticky', top: 0, zIndex: 20 }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px', height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>

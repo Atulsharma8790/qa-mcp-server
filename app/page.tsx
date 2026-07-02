@@ -37,7 +37,7 @@ export default function Home() {
           AI-powered QA & SDLC tools callable from any IDE, any language — Python, TypeScript, Java, Go — via the Model Context Protocol.
         </p>
         <p style={{ color: '#475569', fontSize: 13, marginBottom: 32 }}>
-          Built by <strong style={{ color: '#94A3B8' }}>Atul Sharma</strong> · QA Automation Architect
+          QA Automation Architect
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <a href="/playground" style={{ background: 'linear-gradient(135deg,#6366F1,#818CF8)', color: '#fff', padding: '12px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>

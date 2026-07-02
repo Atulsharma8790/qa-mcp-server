@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </nav>
         {children}
-      </body>
+      <Suspense fallback={null}><PortfolioBar /></Suspense></body>
     </html>
   )
 }
